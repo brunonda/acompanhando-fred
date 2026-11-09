@@ -30,7 +30,11 @@
                 "input": "public"
               }
             ],
-            "styles": [ "node_modules/@fortawesome/fontawesome-free/css/all.min.css", "node_modules/bulma/css/bulma.min.css", "src/styles.scss" ]
+            "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bulma/css/bulma.min.css",
+              "src/styles.scss"
+            ]
           },
           "configurations": {
             "production": {
@@ -70,6 +74,9 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

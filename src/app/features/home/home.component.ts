@@ -1,15 +1,14 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { ModalComponent } from '../../shared/components/modal/modal.component';
-import { NotificationService } from '../../core/services/notification.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent, ModalComponent],
+  imports: [CardComponent, ModalComponent, RouterLink],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  private notifications = inject(NotificationService);
   isModalOpen = signal(false);
 
   openModal() {
@@ -18,9 +17,5 @@ export class HomeComponent {
 
   closeModal() {
     this.isModalOpen.set(false);
-  }
-
-  notify() {
-    this.notifications.show('Notificação de sucesso!', 'is-success');
   }
 }
