@@ -1,0 +1,31 @@
+// Bulma e Font Awesome são carregados via angular.json (styles).
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+footer.footer {
+  flex-shrink: 0;
+}
+
+.chart-wrapper {
+  position: relative;
+  height: 320px;
+}

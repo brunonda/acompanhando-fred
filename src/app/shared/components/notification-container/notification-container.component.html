@@ -1,0 +1,8 @@
+<div class="notification-container">
+  @for (item of notificationService.notifications(); track item.id) {
+    <div class="notification {{ item.type || 'is-info' }} is-light">
+      <button class="delete" aria-label="close" (click)="notificationService.dismiss(item.id)"></button>
+      {{ item.message }}
+    </div>
+  }
+</div>

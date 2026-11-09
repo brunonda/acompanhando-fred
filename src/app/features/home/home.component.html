@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <app-card title="Acompanhamento" icon="fas fa-heartbeat">
+          Registre e acompanhe a evolução do quadro do Frederico.
+        </app-card>
+      </div>
+      <div class="column is-4">
+        <app-card title="Histórico" icon="fas fa-history">
+          Consulte registros anteriores de forma simples e organizada.
+        </app-card>
+      </div>
+      <div class="column is-4">
+        <app-card title="Avisos" icon="fas fa-bell">
+          <button class="button is-info is-light" (click)="notify()">Testar notificação</button>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-modal [isOpen]="isModalOpen()" title="Bem-vindo" (closed)="closeModal()">
+  <p>Projeto configurado com Angular e Bulma CSS.</p>
+</app-modal>

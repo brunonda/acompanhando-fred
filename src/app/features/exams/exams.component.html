@@ -1,0 +1,58 @@
+﻿<section class="section">
+  <div class="container is-fluid">
+    <h1 class="title">Resultados dos exames</h1>
+
+    <div class="tabs is-boxed">
+      <ul>
+        @for (l of labs; track l) {
+          <li [class.is-active]="l === lab()">
+            <a (click)="selectLab(l)"><span>{{ l }}</span><span class="tag is-rounded ml-2">{{ countFor(l) }}</span></a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="columns">
+      <aside class="column is-4 is-3-widescreen">
+        <div class="field">
+          <div class="control has-icons-left">
+            <input class="input" type="search" placeholder="Buscar exame ou data" [value]="query()" (input)="onSearch($event)" />
+            <span class="icon is-left"><i class="fas fa-search"></i></span>
+          </div>
+        </div>
+
+        <nav class="panel exam-list">
+          @for (file of filtered(); track file.url) {
+            <a class="panel-block is-block" [class.is-active]="file === selected()" (click)="select(file)">
+              <strong class="is-block">{{ file.title }}</strong>
+              <small class="has-text-grey">
+                {{ file.date + 'T12:00:00' | date: 'dd/MM/yyyy' }}</small>
+            </a>
+          } @empty {
+            <p class="panel-block">Nenhum exame encontrado.</p>
+          }
+        </nav>
+      </aside>
+
+      <div class="column">
+        @if (selected(); as file) {
+          <div class="level is-mobile mb-2">
+            <div class="level-left"><span class="has-text-weight-semibold">{{ file.title }}</span></div>
+            <div class="level-right">
+              <a class="button is-small is-light" [href]="file.url" target="_blank" rel="noopener">
+                <span class="icon"><i class="fas fa-up-right-from-square"></i></span>
+                <span>Abrir em nova aba</span>
+              </a>
+            </div>
+          </div>
+          @if (viewerUrl(); as url) {
+            <iframe class="pdf-viewer" [src]="url" [title]="file.title"></iframe>
+          }
+        } @else {
+          <p>Selecione um exame para visualizar.</p>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+

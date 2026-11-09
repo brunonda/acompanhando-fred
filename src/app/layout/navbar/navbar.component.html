@@ -1,0 +1,49 @@
+<nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-weight-bold is-size-5" routerLink="/">
+      <span class="icon mr-2"><i class="fas fa-chart-line"></i></span>
+      Acompanhando Fred
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      [class.is-active]="isMenuOpen()"
+      aria-label="menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" [class.is-active]="isMenuOpen()">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">
+        <span class="icon"><i class="fas fa-home"></i></span>
+        <span>Home</span>
+      </a>
+      <a class="navbar-item" routerLink="/dashboard" routerLinkActive="is-active" (click)="closeMenu()">
+        <span class="icon"><i class="fas fa-chart-pie"></i></span>
+        <span>Dashboard</span>
+      </a>
+      <a class="navbar-item" routerLink="/exames" routerLinkActive="is-active" (click)="closeMenu()">
+        <span class="icon"><i class="fas fa-file-pdf"></i></span>
+        <span>Exames</span>
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <button class="button is-light" aria-label="Alternar tema" (click)="toggleTheme()">
+          <span class="icon">
+            <i class="fas" [class.fa-moon]="!isDark()" [class.fa-sun]="isDark()"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<div class="card h-100">
+  @if (title()) {
+    <header class="card-header">
+      <p class="card-header-title">
+        @if (icon()) {
+          <span class="icon mr-2"><i [class]="icon()"></i></span>
+        }
+        {{ title() }}
+      </p>
+    </header>
+  }
+  <div class="card-content">
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
