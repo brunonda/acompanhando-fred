@@ -3,6 +3,13 @@ import { ExamFile } from './exam-file.model';
 
 export const EXAM_FILES: ExamFile[] = [
   {
+    "date": "2026-11-09",
+    "lab": "Pet com Pet",
+    "title": "Resumo Tecnico - Historico Clinico",
+    "url": "exames/Pet%20com%20Pet/Resumo%20Tecnico%20-%20Historico%20Clinico.pdf",
+    "sizeMb": 2
+  },
+  {
     "date": "2026-10-16",
     "lab": "Pet com Pet",
     "title": "Hemograma e Bioquimico",
@@ -213,6 +220,69 @@ export const EXAM_FILES: ExamFile[] = [
     "sizeMb": 3.1
   },
   {
+    "date": "2026-07-23",
+    "lab": "ACR Cunha",
+    "title": "Raio X - imagem 1",
+    "url": "exames/ACR%20Cunha/Raio%20X%20-%2023%2007/17849968256761214183564278020517.jpg",
+    "sizeMb": 0.1
+  },
+  {
+    "date": "2026-07-23",
+    "lab": "ACR Cunha",
+    "title": "Raio X - imagem 2",
+    "url": "exames/ACR%20Cunha/Raio%20X%20-%2023%2007/17849968428797205129720450200547.jpg",
+    "sizeMb": 0.3
+  },
+  {
+    "date": "2026-07-23",
+    "lab": "ACR Cunha",
+    "title": "Raio X - imagem 3",
+    "url": "exames/ACR%20Cunha/Raio%20X%20-%2023%2007/17849968539991318003540769971580.jpg",
+    "sizeMb": 0.3
+  },
+  {
+    "date": "2026-07-23",
+    "lab": "ACR Cunha",
+    "title": "Raio X - imagem 4",
+    "url": "exames/ACR%20Cunha/Raio%20X%20-%2023%2007/1784996867438982665412993809244.jpg",
+    "sizeMb": 0.2
+  },
+  {
+    "date": "2026-07-21",
+    "lab": "ACR Cunha",
+    "title": "Receita 1",
+    "url": "exames/ACR%20Cunha/Receitas/21-07%20-%201%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
+    "date": "2026-07-21",
+    "lab": "ACR Cunha",
+    "title": "Receita 2",
+    "url": "exames/ACR%20Cunha/Receitas/21-07%20-%202%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
+    "date": "2026-07-21",
+    "lab": "ACR Cunha",
+    "title": "Receita 3",
+    "url": "exames/ACR%20Cunha/Receitas/21-07%20-%203%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
+    "date": "2026-07-21",
+    "lab": "ACR Cunha",
+    "title": "Receita 4",
+    "url": "exames/ACR%20Cunha/Receitas/21-07%20-%204%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
+    "date": "2026-07-21",
+    "lab": "ACR Cunha",
+    "title": "Receita 5",
+    "url": "exames/ACR%20Cunha/Receitas/21-07%20-%205%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
     "date": "2026-07-20",
     "lab": "ACR Cunha",
     "title": "Hemograma",
@@ -276,6 +346,13 @@ export const EXAM_FILES: ExamFile[] = [
     "sizeMb": 0
   },
   {
+    "date": "2026-07-10",
+    "lab": "ACR Cunha",
+    "title": "Receita",
+    "url": "exames/ACR%20Cunha/Receitas/10-07%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
     "date": "2026-07-09",
     "lab": "ACR Cunha",
     "title": "Hemograma",
@@ -318,6 +395,13 @@ export const EXAM_FILES: ExamFile[] = [
     "sizeMb": 2.8
   },
   {
+    "date": "2026-07-08",
+    "lab": "ACR Cunha",
+    "title": "Receita",
+    "url": "exames/ACR%20Cunha/Receitas/08-07%20-%20Receita%20-%20Frederico%20-%20Bruno%20Nogueira%20de%20Almeida.pdf",
+    "sizeMb": 0.1
+  },
+  {
     "date": "2026-07-07",
     "lab": "ACR Cunha",
     "title": "Ultrassonografia",
@@ -339,10 +423,17 @@ export const EXAM_FILES: ExamFile[] = [
     "sizeMb": 0
   },
   {
-    "date": "2026-06-05",
-    "lab": "Pet com Pet",
-    "title": "Histopatologico - Biopsia Mama e Pele (Carcinoma e Melanoma)",
-    "url": "exames/Pet%20com%20Pet/2026-06-05/Histopatologico%20-%20Biopsia%20Mama%20e%20Pele%20(Carcinoma%20e%20Melanoma).pdf",
+    "date": "2026-07-02",
+    "lab": "Lillas Pet",
+    "title": "Hemograma",
+    "url": "exames/Lillas%20Pet/02-07-2026/Hemograma.pdf",
+    "sizeMb": 0.2
+  },
+  {
+    "date": "2026-07-02",
+    "lab": "Lillas Pet",
+    "title": "Receituário",
+    "url": "exames/Lillas%20Pet/02-07-2026/receituario%20Frederico%20.pdf",
     "sizeMb": 0.3
   }
 ];

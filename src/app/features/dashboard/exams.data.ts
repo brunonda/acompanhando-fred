@@ -3,6 +3,19 @@ import { ExamResult } from './exam.model';
 
 export const EXAM_RESULTS: ExamResult[] = [
   {
+    "date": "2026-07-02",
+    "hemacias": 4.4,
+    "hemoglobina": 10,
+    "hematocrito": 32,
+    "leucocitos": 2090,
+    "neutrofilos": 1045,
+    "linfocitos": 836,
+    "plaquetas": 300000,
+    "creatinina": 0.8,
+    "alt": 15,
+    "fosfataseAlcalina": 107
+  },
+  {
     "date": "2026-07-08",
     "hemacias": 1.52,
     "hemoglobina": 5.5,

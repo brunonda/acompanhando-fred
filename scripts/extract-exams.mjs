@@ -103,6 +103,24 @@ function parsePetlove(t) {
   };
 }
 
+/** Laboratório PetLab (clínica Lillas Pet) */
+function parsePetlab(t) {
+  const abs = (label) => first(t, new RegExp(`${label}\\.+: [\\d.,]+ ${N} `));
+  const res = (name) => first(t, new RegExp(`${name} Valor de referência Resultado\\.+: ${N}`));
+  return {
+    hemacias: first(t, new RegExp(`Eritrócitos\\.+: ${N}`)),
+    hemoglobina: first(t, new RegExp(`Hemoglobina\\.+: ${N}`)),
+    hematocrito: first(t, new RegExp(`Hematócrito\\.+: ${N}`)),
+    leucocitos: first(t, new RegExp(`Total de Leucócitos\\.+: ${N}`)),
+    neutrofilos: abs('Segmentados'),
+    linfocitos: abs('Linfócitos'),
+    plaquetas: first(t, new RegExp(`Plaquetas\\.+: ${N}`)),
+    creatinina: res('CREATININA'),
+    alt: res('ALANINA AMINOTRANSFERASE'),
+    fosfataseAlcalina: res('FOSFATASE ALCALINA'),
+  };
+}
+
 /** Laudos com layout em colunas que não é parseável (valores lidos manualmente) */
 const manual = {
   'Pet com Pet__2026-07-30__Hemograma Completo (Laudo 351588)': {
@@ -122,7 +140,8 @@ const files = walk(root).filter((f) => /(hemograma|bioquimico|creatinina)/i.test
 for (const file of files) {
   const rel = path.relative(root, file);
   const key = rel.replace(/[\\/]/g, '__').replace(/\.pdf$/, '');
-  const date = rel.match(/(\d{4}-\d{2}-\d{2})/)?.[1];
+  const dmy = rel.match(/(\d{2})-(\d{2})-(\d{4})/);
+  const date = rel.match(/(\d{4}-\d{2}-\d{2})/)?.[1] ?? (dmy && `${dmy[3]}-${dmy[2]}-${dmy[1]}`);
   if (!date) continue;
 
   let values;
@@ -132,6 +151,7 @@ for (const file of files) {
     const text = (await pdfText(file)).replace(/\s+/g, ' ');
     if (text.includes('ACR Cunha Hospital')) values = parseAcr(text);
     else if (text.includes('Data Entrada')) values = parsePetlove(text);
+    else if (text.includes('PetLab')) values = parsePetlab(text);
     else {
       console.warn('Layout desconhecido:', rel);
       continue;

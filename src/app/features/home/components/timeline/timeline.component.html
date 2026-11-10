@@ -1,0 +1,11 @@
+<div class="box mb-5">
+  <h2 class="title is-4">Linha do tempo</h2>
+  <p class="subtitle is-6">Data do primeiro exame em cada clínica</p>
+  <ol class="timeline">
+    @for (m of milestones(); track m.clinic) {
+      <li class="timeline-item">
+        <strong class="is-block">{{ m.clinic }}</strong>
+        <span class="has-text-grey">{{ m.date + 'T12:00:00' | date: 'dd/MM/yyyy' }}</span>
+      </li>
+    }
+  </ol>

@@ -1,0 +1,67 @@
+.timeline {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-item {
+  flex: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 2rem;
+
+  // linha que liga os marcos
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    background: var(--bulma-border);
+  }
+
+  &:first-child::before {
+    display: none;
+  }
+
+  // marco
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: -0.55rem;
+    border-radius: 50%;
+    background: var(--bulma-link);
+    border: 3px solid var(--bulma-scheme-main);
+    box-shadow: 0 0 0 2px var(--bulma-link);
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+  }
+
+  .timeline-item {
+    text-align: left;
+    padding: 0 0 1.5rem 2rem;
+
+    &::before {
+      top: -1.5rem;
+      left: 0.5rem;
+      width: 2px;
+      height: 100%;
+    }
+
+    &::after {
+      left: 0;
+      top: 0.2rem;
+      margin-left: 0;
+    }
+  }
+}
